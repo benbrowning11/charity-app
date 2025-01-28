@@ -1,0 +1,69 @@
+<template>
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <!-- Title Section -->
+        <div class="max-w-3xl mb-16">
+          <h2 class="text-4xl font-gloria text-[#0E26A5] leading-[50px]">
+            The Visionary
+            <br />
+            Who Returned Home
+          </h2>
+        </div>
+  
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Left Column -->
+          <div class="space-y-12">
+            <p class="text-xl font-inter">
+              Prakash Bista was born in Kalikot, a remote village where residents still 
+              lack basic medical care. His parents, after a three-day walk to the nearest 
+              town, saw children in school uniforms and decided to send Prakash to a 
+              boarding school. Tragically, his education was interrupted by a civil war, 
+              and his parents passed away in an accident just as he was preparing for his 
+              final exams.
+            </p>
+  
+            <p class="text-xl font-inter">
+              Despite these immense challenges, Prakash founded Impact Schools, convincing 
+              neighbours to trust him with building the first school in his village. With 
+              scholarships, he studied in the US and at LSE, but unlike many peers who 
+              stayed abroad to climb the career ladder, Prakash returned home to expand 
+              Impact Schools. Today, these schools educate over 300 children and provide 
+              accommodations for more than 30 orphans.
+            </p>
+          </div>
+  
+          <!-- Right Column -->
+          <div class="space-y-8">
+            <img 
+              src="/storage/prakash.png" 
+              alt="Prakash Bista" 
+              class="rounded-[50px] w-full h-[316px] object-cover"
+            />
+  
+            <!-- Quote Box -->
+            <div class="bg-[#E7F8FF] rounded-[50px] p-8 relative">
+              <img 
+                src="/storage/quote-left.png" 
+                alt="Quote mark" 
+                class="absolute -top-16 -left-16 w-[175px] h-[149px] object-contain opacity-50"
+              />
+              <img 
+                src="/storage/quote-right.png" 
+                alt="Quote mark" 
+                class="absolute -bottom-16 -right-16 w-[159px] h-[133px] object-contain opacity-50"
+              />
+              
+              <p class="text-3xl font-verdana text-center">
+                Prakash's story reminds us that one individual's determination can ignite 
+                change for entire communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+  
+  <script setup lang="ts">
+  // Component logic here if needed
+  </script>

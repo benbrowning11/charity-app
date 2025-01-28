@@ -1,0 +1,82 @@
+services:
+  
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: ./php.Dockerfile
+    image: php:8.3-cli
+    container_name: app-charity
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    networks:
+      - app-network
+    volumes:
+      - ./:/var/www
+      - ./storage:/var/www/storage  # Add explicit storage mount
+      - ./public:/var/www/public    # Add explicit public mount
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+
+    depends_on:
+      - db
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver-charity
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+    volumes:
+      - ./:/var/www
+      - ./public:/var/www/public    # Add explicit public mount
+      - ./storage:/var/www/storage  # Add explicit storage mount
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - app
+
+  #Maria Service
+  db:
+    image: mariadb:11
+    container_name: db-charity
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_ROOT_HOST: '%'
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - 'dbdata:/var/lib/mysql'
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    healthcheck:
+      test:
+          - CMD
+          - healthcheck.sh
+          - '--connect'
+          - '--innodb_initialized'
+      retries: 3
+      timeout: 5s
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

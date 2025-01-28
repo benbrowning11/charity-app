@@ -6,14 +6,28 @@ export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './resources/js/**/*.vue',
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                gloria: ['Gloria Hallelujah', 'cursive'],
+                verdana: ['Verdana', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            },
+            fontSize: {
+                '8xl': '6rem', // 96px
+            },
+            colors: {
+                'ledu-blue': '#1135F3',
+                'ledu-dark-blue': '#0E076F',
+                'ledu-green': '#53A21A',
             },
         },
     },
