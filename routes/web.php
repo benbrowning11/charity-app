@@ -16,7 +16,7 @@ Route::get('/', [HomeController::class, 'index'])
 Route::get('/about', [AboutController::class, 'index'])
     ->name('about');
 
-Route::get('/newsletter', [NewsletterController::class, 'index'])
+Route::get('/news', [NewsletterController::class, 'index'])
     ->name('newsletter');
 
 Route::middleware(['auth'])->group(function () {

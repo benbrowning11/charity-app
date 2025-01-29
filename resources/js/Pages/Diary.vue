@@ -1,6 +1,7 @@
 <template>
     <div class="min-h-screen bg-[#D8B29A]">
       <Head title="The Diary - LEDU" />
+      <SlideMenu />
       <DiaryBook />
     </div>
 </template>
@@ -8,6 +9,7 @@
 <script setup lang="ts">
   import { Head } from '@inertiajs/vue3'
   import DiaryBook from '@/Components/Diary/DiaryBook.vue'
+  import SlideMenu from '@/Components/Shared/SlideMenu.vue'
 </script>
 
 <style scoped>

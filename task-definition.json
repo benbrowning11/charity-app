@@ -1,0 +1,30 @@
+{
+    "family": "charity-app",
+    "executionRoleArn": "arn:aws:iam::135808952415:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+        {
+            "name": "app",
+            "image": "135808952415.dkr.ecr.eu-north-1.amazonaws.com/rafa/charity-web:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 81,
+                    "hostPort": 81,
+                    "protocol": "tcp"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/charity-app",
+                    "awslogs-region": "eu-north-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ]
+}

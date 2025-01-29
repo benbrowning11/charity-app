@@ -1,9 +1,12 @@
 <template>
     <nav class="header">
       <div class="parent">
-        <img class="icon1" alt="" src="/storage/worldMini2.png" />
-        <div class="group-child" />
-        <div class="ledu">LEDU</div>
+        <Link href="/">
+          
+          <img class="icon1" alt="" src="/storage/worldMini2.png" />
+          <div class="group-child" />
+          <div class="ledu">LEDU</div>
+        </Link>
       </div>
       <div class="navigation">
         <Link class="nav-link" href="/about">About Us</Link>

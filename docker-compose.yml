@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./php.Dockerfile
+      dockerfile: ./Dockerfile
     image: php:8.3-cli
     container_name: app-charity
     restart: unless-stopped
@@ -17,8 +17,6 @@ services:
       - app-network
     volumes:
       - ./:/var/www
-      - ./storage:/var/www/storage  # Add explicit storage mount
-      - ./public:/var/www/public    # Add explicit public mount
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
     depends_on:
@@ -31,14 +29,12 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"
-      - "443:443"
+      - "81:81"
+      - "444:444"
     networks:
       - app-network
     volumes:
       - ./:/var/www
-      - ./public:/var/www/public    # Add explicit public mount
-      - ./storage:/var/www/storage  # Add explicit storage mount
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - app
@@ -50,7 +46,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'

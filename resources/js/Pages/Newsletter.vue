@@ -56,7 +56,7 @@
       title: 'Solar Panels Installed at Impact Schools',
       category: 'Latest News',
       date: '09/01/2025',
-      image: '/storage/solar-panels.jpg',
+      image: '/storage/solarPanel.png',
       excerpt: 'Our latest initiative brings sustainable energy solutions to our partner schools...'
     },
     {

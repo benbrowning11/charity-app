@@ -21,7 +21,11 @@
         <WhoWeAre />
         <Beginning />
         <Prakash />
-        <VideoPage v-if="showImpactVideo" />
+        <VideoPage 
+          v-if="showImpactVideo" 
+          :videoUrl="assets.videoUrl" 
+          :thumbnailUrl="assets.thumbnailUrl" 
+        />
       </main>
       
       <ScrollToTop />

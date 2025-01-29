@@ -53,7 +53,7 @@
   </template>
   
   <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref, nextTick } from 'vue'
   
   const props = withDefaults(defineProps<{
     videoUrl: string
@@ -82,7 +82,4 @@
     videoStarted.value = false
   }
   
-function nextTick(arg0: () => void) {
-    throw new Error('Function not implemented.');
-}
 </script>

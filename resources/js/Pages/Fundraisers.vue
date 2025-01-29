@@ -41,7 +41,7 @@ const activeCampaigns = [
   },
   {
     id: 2,
-    title: 'Books',
+    title: 'Books 2',
     goal: 500,
     raised: 375,
     imageUrl: '/storage/books.png',
@@ -50,7 +50,7 @@ const activeCampaigns = [
   },
   {
     id: 3,
-    title: 'Books',
+    title: 'Books 3',
     goal: 500,
     raised: 375,
     imageUrl: '/storage/books.png',
@@ -65,7 +65,7 @@ const completedCampaigns = [
     title: 'Books for Bright Minds',
     goal: 500,
     raised: 500,
-    imageUrl: '/storage/IMG_6781_1.png',
+    imageUrl: '/storage/booksForBright.png',
     description: 'Thanks to your incredible support, we successfully provided a new collection of books to Impact Schools, inspiring a love for reading among children.',
     status: 'completed' as const
   }

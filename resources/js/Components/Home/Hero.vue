@@ -27,7 +27,7 @@
           
           <!-- CTA Button -->
           <div class="absolute top-[349px] right-[351px]">
-            <Link href="/support" class="inline-block">
+            <Link href="/fundraisers" class="inline-block">
               <Button variant="primary" class="text-xl">
                 Support the Cause
               </Button>
